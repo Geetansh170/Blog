@@ -26,6 +26,7 @@ app.use(express.json({ extended: false }));
 // }
 
 app.use("/api/post", require("./routes/post"));
+app.use("/api/comment", require("./routes/comment"));
 
 const PORT = process.env.PORT || 5000;
 

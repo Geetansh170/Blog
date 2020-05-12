@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-const PostSchema = mongoose.Schema({
-  title: {
+const CommentSchema = mongoose.Schema({
+  post: {
     type: String,
     required: true,
   },
@@ -19,4 +19,4 @@ const PostSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("post", PostSchema);
+module.exports = mongoose.model("comment", CommentSchema);

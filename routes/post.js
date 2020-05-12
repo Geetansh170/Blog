@@ -33,6 +33,20 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/like/:id", async (req, res) => {
+  try {
+    let post = await Post.findById(req.params.id);
+    if (!post) return res.status(404).json({ msg: "Post not found" });
+
+    post = await Post.findByIdAndUpdate(req.params.id, { $inc: { likes: 1 } });
+
+    res.json(post);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 router.delete("/:id", async (req, res) => {
   try {
     let post = await Post.findById(req.params.id);
