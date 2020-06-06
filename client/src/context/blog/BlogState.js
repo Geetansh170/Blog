@@ -41,12 +41,20 @@ const BlogState = (props) => {
   const addPost = async (post) => {
     const config = {
       headers: {
-        "Content-Type": "application/json",
-      },
+        'Content-Type': 'application/json'
+      }
     };
 
+    
+
+    console.log("function called");
+    console.log(post);
+
+
+
     try {
-      const res = await axios.post("/api/post", post, config);
+      console.log("masti nai"); 
+      const res = await axios.post("/api/post",post,config); 
 
       dispatch({
         type: ADD_POST,

@@ -20,7 +20,7 @@ const PostItem = ({ post }) => {
 
   return (
     <Fragment>
-      <div className='leftcolumn'>
+    
         <div className='card shadow p-4 mb-4 bg-dark text-white'>
           <h2>{title}</h2>
           <h5>
@@ -38,7 +38,7 @@ const PostItem = ({ post }) => {
             </i>{" "}
           </button>
         </div>
-      </div>
+    
     </Fragment>
   );
 };

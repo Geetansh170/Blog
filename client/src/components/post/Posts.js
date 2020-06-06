@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import PostItem from "./PostItem";
 import BlogContext from "../../context/blog/blogContext";
-import axios from "axios";
+
 
 const Posts = () => {
   const blogContext = useContext(BlogContext);
@@ -15,10 +15,14 @@ const Posts = () => {
   console.log(posts[0]);
 
   if (posts !== null && posts.length === 0) {
-    return <h4>Please add a contact</h4>;
+    return (
+      <div className='leftcolumn mx-auto text-center mt-4'>
+        <img src="../../lod.webp" /> 
+        </div>)
   }
   return (
     <Fragment>
+       <div className='leftcolumn'>
       {posts.map((post) => (
         <PostItem key={post._id} post={post} />
       ))}
@@ -47,6 +51,7 @@ const Posts = () => {
           </button>
         </div>
       </div> */}
+      </div>
     </Fragment>
   );
 };

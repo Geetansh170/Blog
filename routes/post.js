@@ -18,6 +18,8 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   const { title, content } = req.body;
 
+  console.log("kya natak h??");
+  console.log(req.body);
   try {
     const newPost = new Post({
       title,
@@ -28,7 +30,7 @@ router.post("/", async (req, res) => {
 
     res.json(post);
   } catch (err) {
-    console.error(er.message);
+    console.error(err.message);
     res.status(500).send("Server Error");
   }
 });
